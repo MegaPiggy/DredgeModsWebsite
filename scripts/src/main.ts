@@ -43,6 +43,7 @@ async function load_mod_readme(mod : {readme_raw : string, name : string}) {
 `---
 layout: ../../layouts/ModPage.astro
 title: ${mod.name}
+mod: ${mod}
 ---
 ${results}`
 
