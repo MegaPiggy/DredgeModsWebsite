@@ -33,16 +33,6 @@ jobs:
           npm run build
       - name: Run local action
         uses: ./actions/fetch-database
-      - name: die
-        run: |
-          ls
-          pwd
-          cd scripts
-          ls
-          pwd
-          cd build
-          ls
-          pwd
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
