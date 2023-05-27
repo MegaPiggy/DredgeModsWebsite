@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import BrandLink from '../components/BrandLink.astro';
+import json from '../database.json';
+---
+
+<Layout title="DREDGE Mods">
+	<main>
+		<p>Here are all of the mods available.</p>
+		<p>
+			{json.map(x => 
+                <div>
+                    <Title title={x.name} />
+                    <p><b>Author:</b> {x.repo.split("/")[0]}</p>
+                    <p><b>Latest version:</b> {x.latest_version}</p>
+                    <p><b>Download count:</b> {x.downloads}</p>
+                    {x.description}
+
+                    <br/>
+                    <BrandLink class="fa-github" name={x.name + " on GitHub"} url={"https://www.github.com/" + x.repo} linkClass="link-dark" />
+                    <br/>
+                </div>
+			)}
+		</p>
+
+	</main>
+</Layout>
+
+

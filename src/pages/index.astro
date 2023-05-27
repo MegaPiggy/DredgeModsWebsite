@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import BrandLink from '../components/BrandLink.astro';
+import json from '../database.json';
 ---
 
 <Layout title="DREDGE Mods">
@@ -16,11 +17,11 @@ import BrandLink from '../components/BrandLink.astro';
 
 		<Title title="Mods" />
 
-		<p>Here are some of the mods available. See the rest of them here.</p>
+		<p>Here are some of the mods available. See the rest of them <a href="/mods/">here</a>.</p>
 		<p>
-			<ul>
-				<li>Cosmic Horror Fishing Buddies - Description</li>
-			</ul>
+			{json.sort(() => 0.5 - Math.random()).slice(0, 3).map(x => 
+				<li><b>{x.name}</b></li>
+			)}
 		</p>
 
 		<br/>
