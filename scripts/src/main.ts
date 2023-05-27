@@ -8,7 +8,7 @@ async function run() {
     await fetch_json("https://raw.githubusercontent.com/xen-42/DredgeModDatabase/database/database.json").then((results) => {
         let json = JSON.stringify(results, null, 2);
         core.info(json);
-        fs.writeFile("src/database.json", json, 'utf8', (err : Error) => {
+        fs.writeFile("database.json", json, 'utf8', (err : Error) => {
             if (err) {
                 throw new Error(err.message);
             }
