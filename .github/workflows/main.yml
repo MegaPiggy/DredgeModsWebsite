@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: database-artifact
-          path: script/build/database.json
+          path: scripts/build/database.json
 
   build:
     name: Build
