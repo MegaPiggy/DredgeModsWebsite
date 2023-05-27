@@ -39,20 +39,6 @@ jobs:
           ls
       - name: Run local action
         uses: ./actions/fetch-database
-      - name: Checkout database repo
-        uses: actions/checkout@v3
-        with:
-          ref: database
-          path: database
-      - name: Copy database
-        run: cp database.json database/database.json
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          branch: database
-          repository: database
-          commit_message: Update mod database
-          commit_user_name: Dredge Mod Database
 
   build:
     name: Build
