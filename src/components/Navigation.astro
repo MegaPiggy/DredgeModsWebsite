@@ -1,0 +1,17 @@
+---
+const pages = [
+    ["/", "Home"],
+    ["/mods/", "Mods"]
+]
+---
+
+<nav class="d-flex justify-content-start">
+    {pages.map(([path, title]) => (
+        <div class="bg-secondary text-light rounded me-2 ms-2 p-2">
+            <a class="nav-link pe-2 ps-2" href={path}>{title}</a>
+        </div>
+    ))}
+</nav>
+
+
+

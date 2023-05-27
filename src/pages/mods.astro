@@ -7,22 +7,27 @@ import json from '../database.json';
 
 <Layout title="DREDGE Mods">
 	<main>
-		<p>Here are all of the mods available.</p>
-		<p>
-			{json.map(x => 
+        <p>There are {json.length} mods available.</p>
+
+		<div>
+			{json.sort().map(x => 
                 <div>
                     <a href={"/mods/" + x.name.toLowerCase().trim().split(" ").join("_")}><Title title={x.name} /></a>
-                    <p><b>Author:</b> {x.repo.split("/")[0]}</p>
-                    <p><b>Latest version:</b> {x.latest_version}</p>
-                    <p><b>Download count:</b> {x.downloads}</p>
-                    {x.description}
 
-                    <br/>
-                    <BrandLink class="fa-github" name={x.name + " on GitHub"} url={"https://www.github.com/" + x.repo} linkClass="link-dark" />
+                    <div class="d-flex flex-column justify-content-center text-center">
+                        <div>
+                            <p>{x.description}</p>
+                            <p><i>By {x.repo.split("/")[0]}, {x.downloads} downloads, version {x.latest_version}</i></p>   
+                        </div>
+                        <div>
+                            <BrandLink class="fa-github" name={x.name + " on GitHub"} url={"https://www.github.com/" + x.repo} linkClass="link-dark" />
+                        </div>
+                    </div>
+
                     <br/>
                 </div>
 			)}
-		</p>
+		</div>
 
 	</main>
 </Layout>

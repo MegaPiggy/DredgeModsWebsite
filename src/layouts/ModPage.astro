@@ -1,21 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
-import BrandLink from '../components/BrandLink.astro';
-import json from '../database.json';
 
-export interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-<Layout title={title}>
+<Layout title={frontmatter.title}>
 	<main>
-		<a href="/mods/">Back to Mods</a>
+		<a href="javascript:history.back()">Back</a>
 
-		<Title title={title} />
+		<Title title="" />
 
         <slot />
 	</main>

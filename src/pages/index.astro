@@ -7,38 +7,44 @@ import json from '../database.json';
 
 <Layout title="DREDGE Mods">
 	<main>
-		<p>
-			<strong>DREDGE Mods</strong> are unofficial modifications for <a href="https://www.dredge.game/">DREDGE</a> 
-			by <a href="https://www.blacksaltgames.com/">Black Salt Games</a> which you can install and play using the 
-			<a href="https://github.com/xen-42/DredgeModManager">DREDGE Mod Manager</a>.
-		</p>
+		<div class="w-100 justify-content-center d-flex">
+			<p class="w-50">
+				The <strong>DREDGE Mods</strong> website hosts {json.length} unofficial mods for <a href="https://www.dredge.game/">DREDGE</a> 
+				 which you can install and play using the <a href="https://github.com/xen-42/DredgeModManager">DREDGE Mod Manager</a>.
+			</p>
+		</div>
+
 
 		<br/>
 
 		<Title title="Mods" />
 
-		<p>Here are some of the mods available. See the rest of them <a href="/mods/">here</a>.</p>
-		<p>
-			{json.sort(() => 0.5 - Math.random()).slice(0, 3).map(x => 
-				<li><a href={"/mods/" + x.name.toLowerCase().trim().split(" ").join("_")}><b>{x.name}</b></a></li>
-			)}
-		</p>
+		<div class="w-100 justify-content-center d-flex">
+			<div class="w-50">
+				<p>Here are some of the mods available. See the rest of them <a href="/mods/">here</a>.</p>
+				<p>
+					{json.slice().sort(() => 0.5 - Math.random()).slice(0, 3).map(x => 
+						<li><a href={"/mods/" + x.name.toLowerCase().trim().split(" ").join("_")}><b>{x.name}</b></a></li>
+					)}
+				</p>
+			</div>
+		</div>
 
-		<br/>
-
-		<Title title="Manager" />
-
-		<p>You can install the mod manager <a href="https://github.com/xen-42/DredgeModManager">here</a>.</p>
+		<div class="w-100 justify-content-center d-flex ">
+			<a href="https://github.com/xen-42/DredgeModManager/releases" class="btn btn-info rounded ps-4 pe-4 p-2"><h2>Download the Manager Here</h2></a>
+		</div>
 
 		<br/>
 
 		<Title title="Community" />
 
-		<p>Join the DREDGE community modding Discord server for mod support, or if you want to talk about playing and creating mods.</p>
-		<BrandLink class="fa-discord" name="Modding Discord" url="https://discord.gg/qFqPuTUAmD" linkClass="link-dark" />
-		<p>
+		<div class="w-100 justify-content-center d-flex">
+			<div class="w-50">
+				<p>Join the DREDGE community modding Discord server for mod support, or if you want to talk about playing and creating mods.</p>
+				<BrandLink class="fa-discord" name="Modding Discord" url="https://discord.gg/qFqPuTUAmD" linkClass="link-dark" />
+			</div>
+		</div>
 
-		</p>
 	</main>
 </Layout>
 
