@@ -31,19 +31,13 @@ jobs:
           cd scripts
           npm install
           npm run build
-      - name: Sanity check
-        run: |
-          cd scripts
-          cd build
-          pwd
-          ls
       - name: Run local action
         uses: ./actions/fetch-database
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: database-artifact
-          path: database.json
+          path: script/build/database.json
 
   build:
     name: Build
