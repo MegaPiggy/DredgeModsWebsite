@@ -1,4 +1,4 @@
 name: "Fetch Database"
 runs:
   using: "node16"
-  main: "../../scripts/build/scripts/src/main.js"
+  main: "../../scripts/build/main.js"
