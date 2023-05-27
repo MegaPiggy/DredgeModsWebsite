@@ -22,3 +22,4 @@ pnpm-debug.log*
 
 
 src/pages/mods/*.md
+src/database.json
