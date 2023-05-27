@@ -30,7 +30,7 @@ const { title } = Astro.props;
 			margin: auto;
 			padding: 1.5rem;
 			max-width: 90%;
-			min-width: 90%
+			min-width: 90%;
 		}
 		h1 {
 			font-size: 3rem;
@@ -58,6 +58,12 @@ const { title } = Astro.props;
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
+		.chromatic-abberation {
+			text-shadow: rgba(10, 189, 240, 0.298039) 2px 2px 0px, rgba(254, 1, 1, 0.298039) -2px -2px 0px;
+		}
+			a .chromatic-abberation {
+				text-shadow: none ! important;
+			}
 	</style>
 	<body class="d-flex flex-column min-vh-100 bg-secondary dredge-bg">
 
