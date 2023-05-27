@@ -1,13 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
+import BrandLink from '../components/BrandLink.astro';
 
 const { frontmatter } = Astro.props;
+const author = frontmatter.mod.repo.split("/")[0];
 ---
 
 <Layout title={frontmatter.title}>
 	<main>
-		<a href="javascript:history.back()">Back</a>
+		<br/>
+		<div class="d-flex justify-content-center">
+			<div class="p-2 bg-secondary rounded w-75">
+				<div class="text-center">
+					<b>{frontmatter.mod.name} <i>by <a href={"https://www.github.com/" + author}>{author}</a></i></b>
+				</div>
+	
+				<div class="p-2 d-flex justify-content-center">
+					{frontmatter.mod.description}
+				</div>
+	
+				<div class="p-2 d-flex d-flex justify-content-around flex-wrap">
+					<span>
+						📈 {frontmatter.mod.downloads} Downloads
+					</span>
+	
+					<span>
+						<a href={"https://www.github.com/" + frontmatter.mod.repo}>
+							<i class="fa-brands fa-github"></i> Source Code
+						</a>
+					</span>
+	
+					<span>
+						<a href={"https://www.github.com/" + frontmatter.mod.repo + "/releases/latest/download/" + frontmatter.mod.download}>
+							<i class="fa fa-download"></i> Download zip ({frontmatter.mod.latest_version})
+						</a>
+					</span>
+				</div>
+			</div>
+		</div>
+		
+
+		<br/>
 
 		<Title title="" />
 

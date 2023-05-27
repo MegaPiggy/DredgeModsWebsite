@@ -4,12 +4,13 @@ const fs = require("fs");
 
 function srcDir() {
     let dir = process.cwd().split("\\").slice(-1)[0];
-    let src_dir = dir == "build" ? "../../src" : "src";
+    // This is dumb. Idk. Makes it run properly locally and via the action
+    let src_dir = dir == "build" ? "../../src" : (dir == "scripts" ? "../src" : "src");
     return src_dir;
 }
 
 async function run() {
-    core.info("Started fetching mod database");
+    core.info("Started fetching mod database. Running from " + process.cwd());
 
     await fetch_json("https://raw.githubusercontent.com/xen-42/DredgeModDatabase/database/database.json").then((results) => {
         let json = JSON.stringify(results, null, 2);
@@ -42,8 +43,7 @@ async function load_mod_readme(mod : {readme_raw : string, name : string}) {
         let mod_page = 
 `---
 layout: ../../layouts/ModPage.astro
-title: ${mod.name}
-mod: ${mod}
+mod: ${JSON.stringify(mod)}
 ---
 ${results}`
 
