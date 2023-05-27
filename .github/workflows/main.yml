@@ -37,10 +37,10 @@ jobs:
         run: |
           ls
           pwd
-          cd build
+          cd scripts
           ls
           pwd
-          cd ../../
+          cd build
           ls
           pwd
       - name: Upload artifact
