@@ -11,7 +11,7 @@ import json from '../database.json';
 		<p>
 			{json.map(x => 
                 <div>
-                    <a href={"/mods/" + x.name.toLowerCase().replaceAll(" ", '')}><Title title={x.name} /></a>
+                    <a href={"/mods/" + x.name.toLowerCase().trim().split(" ").join("_")}><Title title={x.name} /></a>
                     <p><b>Author:</b> {x.repo.split("/")[0]}</p>
                     <p><b>Latest version:</b> {x.latest_version}</p>
                     <p><b>Download count:</b> {x.downloads}</p>

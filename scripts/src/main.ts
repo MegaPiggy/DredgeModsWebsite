@@ -25,6 +25,11 @@ async function run() {
         });
         core.info("Saved database.json");
 
+        let dir = `${srcDir()}/pages/mods`;
+        if (!fs.existsSync(dir)){
+            fs.mkdirSync(dir, { recursive: true });
+        }
+
         // Now we fetch the readmes
         results.forEach(load_mod_readme);
     });
@@ -32,7 +37,7 @@ async function run() {
 
 async function load_mod_readme(mod : {readme_raw : string, name : string}) {
     await fetch_text(mod.readme_raw).then((results) => {
-        let page_name = mod.name.toLowerCase().replace(" ", "");
+        let page_name = mod.name.toLowerCase().trim().split(" ").join("_");
 
         let mod_page = 
 `---
