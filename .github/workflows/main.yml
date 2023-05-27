@@ -16,7 +16,7 @@ env:
   BUILD_PATH: "."
 
 jobs:
-  fetch-database:
+  build:
     name: Fetch Database
     runs-on: ubuntu-latest
     steps:
