@@ -33,24 +33,6 @@ jobs:
           npm run build
       - name: Run local action
         uses: ./actions/fetch-database
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: database-artifact
-          path: ./database.json
-
-  build:
-    name: Build
-    needs: fetch-database
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: database-artifact
-          path: src
       - name: Detect package manager
         id: detect-package-manager
         run: |
