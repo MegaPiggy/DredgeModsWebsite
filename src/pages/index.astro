@@ -20,7 +20,7 @@ import json from '../database.json';
 		<p>Here are some of the mods available. See the rest of them <a href="/mods/">here</a>.</p>
 		<p>
 			{json.sort(() => 0.5 - Math.random()).slice(0, 3).map(x => 
-				<li><b>{x.name}</b></li>
+				<li><a href={"/mods/" + x.name.toLowerCase().trim().split(" ").join("_")}><b>{x.name}</b></a></li>
 			)}
 		</p>
 
@@ -28,7 +28,6 @@ import json from '../database.json';
 
 		<Title title="Manager" />
 
-		<p>TODO: put a picture of the mod Manager</p>
 		<p>You can install the mod manager <a href="https://github.com/xen-42/DredgeModManager">here</a>.</p>
 
 		<br/>
