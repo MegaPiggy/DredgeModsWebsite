@@ -8,7 +8,7 @@ import json from '../database.json';
 <Layout title="DREDGE Mods">
 	<main>
 		<div class="w-100 justify-content-center d-flex">
-			<p class="w-lg-50">
+			<p class="w-md-50">
 				The <strong>DREDGE Mods</strong> website hosts {json.length} unofficial mods for <a href="https://www.dredge.game/">DREDGE</a> 
 				 which you can install and play using the <a href="https://github.com/xen-42/DredgeModManager">DREDGE Mod Manager</a>.
 			</p>
@@ -20,7 +20,7 @@ import json from '../database.json';
 		<Title title="Available Mods" />
 
 		<div class="w-100 justify-content-center d-flex">
-			<div class="w-lg-50">
+			<div class="w-md-50">
 				<p>Here are some of the mods available. See the rest of them <a href="/mods/">here</a>.</p>
 				<p>
 					{json.slice().sort(() => 0.5 - Math.random()).slice(0, 3).map(x => 
@@ -35,7 +35,7 @@ import json from '../database.json';
 		<Title title="Mod Manager"/>
 
 		<div class="w-100 justify-content-center d-flex">
-			<div class="w-lg-50">
+			<div class="w-md-50">
 				<div class="d-flex align-items-center">
 					<img src="/images/mod manager.png" class="w-100 ratio ratio-1x1"></img>
 				</div>
@@ -51,7 +51,7 @@ import json from '../database.json';
 		<br/>
 
 		<div class="w-100 justify-content-center d-flex">
-			<div class="w-lg-50">
+			<div class="w-md-50">
 
 				The mod manager allows you to:
 				<ul>
@@ -79,7 +79,7 @@ import json from '../database.json';
 		<Title title="Winch Mod Loader" />
 
 		<div class="w-100 justify-content-center d-flex">
-			<div class="w-lg-50">
+			<div class="w-md-50">
 				<div class="d-flex">
 					<div class="d-flex align-items-center">
 						<img src="/images/winch icon.png" class="w-100 ratio ratio-1x1"></img>
@@ -107,7 +107,7 @@ import json from '../database.json';
 		<Title title="Community" />
 
 		<div class="w-100 justify-content-center d-flex">
-			<div class="w-lg-50">
+			<div class="w-md-50">
 				<p>Join the DREDGE community modding Discord server for mod support, or if you want to talk about playing and creating mods.</p>
 				<BrandLink class="fa-discord" name="Modding Discord" url="https://discord.gg/qFqPuTUAmD" linkClass="link-light" />
 			</div>
