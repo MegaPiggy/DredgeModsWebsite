@@ -48,6 +48,18 @@ const { title } = Astro.props;
 		<meta name="twitter:creator:id" content="xen_42">
 
 	</head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TZELGRMMZ"></script>
+	<script>
+		// @ts-expect-error
+		window.dataLayer = window.dataLayer || [];
+		// @ts-expect-error
+		function gtag(){dataLayer.push(arguments);}
+		// @ts-expect-error
+		gtag('js', new Date());
+		// @ts-expect-error
+		gtag('config', 'G-7TZELGRMMZ');
+	</script>
 	<style is:global>
 		main {
 			margin: auto;
