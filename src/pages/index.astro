@@ -8,7 +8,7 @@ import json from '../database.json';
 <Layout title="DREDGE Mods">
 	<main>
 		<div class="w-100 justify-content-center d-flex">
-			<p class="w-50">
+			<p class="w-md-50">
 				The <strong>DREDGE Mods</strong> website hosts {json.length} unofficial mods for <a href="https://www.dredge.game/">DREDGE</a> 
 				 which you can install and play using the <a href="https://github.com/xen-42/DredgeModManager">DREDGE Mod Manager</a>.
 			</p>
@@ -20,7 +20,7 @@ import json from '../database.json';
 		<Title title="Available Mods" />
 
 		<div class="w-100 justify-content-center d-flex">
-			<div class="w-50">
+			<div class="w-md-50">
 				<p>Here are some of the mods available. See the rest of them <a href="/mods/">here</a>.</p>
 				<p>
 					{json.slice().sort(() => 0.5 - Math.random()).slice(0, 3).map(x => 
@@ -35,7 +35,7 @@ import json from '../database.json';
 		<Title title="Mod Manager"/>
 
 		<div class="w-100 justify-content-center d-flex">
-			<div class="w-50">
+			<div class="w-md-50">
 				<div class="d-flex align-items-center">
 					<img src="/images/mod manager.png" class="w-100 ratio ratio-1x1"></img>
 				</div>
@@ -51,7 +51,7 @@ import json from '../database.json';
 		<br/>
 
 		<div class="w-100 justify-content-center d-flex">
-			<div class="w-50">
+			<div class="w-md-50">
 
 				The mod manager allows you to:
 				<ul>
@@ -60,6 +60,17 @@ import json from '../database.json';
 					<li>Enable or disable mods</li>
 					<li>Launch the game directly with your enabled mods</li>
 				</ul>
+
+				To use the manager:
+				<ul>
+					<li>Download the correct version from the link above. If you're on windows this will likely be "Dredge.Mod.Manager_#.#.#_x64-setup.exe".</li>
+					<li>Run the installer. If on Windows, Microsoft Defender will stop you from running it. Click "more info" and "run anyway".</li>
+					<li>Click through the installer as normal.</li>
+				</ul>
+
+				<b>Note:</b> You must install Winch from the Available mods list to have any mods take work. To get rid of all mods, uninstall all of them including Winch
+				 and then verify your game files in 
+				whatever platform you installed the game with.
 			</div>
 		</div>
 
@@ -68,7 +79,7 @@ import json from '../database.json';
 		<Title title="Winch Mod Loader" />
 
 		<div class="w-100 justify-content-center d-flex">
-			<div class="w-50">
+			<div class="w-md-50">
 				<div class="d-flex">
 					<div class="d-flex align-items-center">
 						<img src="/images/winch icon.png" class="w-100 ratio ratio-1x1"></img>
@@ -80,6 +91,11 @@ import json from '../database.json';
 
 						<p>If you're interested in creating mods yourself, check out the <a href=https://github.com/Hacktix/Winch/wiki>documentation</a> 
 						or try picking apart the <a href="https://github.com/Hacktix/Winch/tree/master/Winch.Examples">example mods</a>.</p>
+
+						<p>If you have already created a mod and want to add it to the database, click 
+							<a href="https://github.com/xen-42/DredgeModDatabase/issues/new?assignees=&labels=add-new-mod&projects=&template=add-new-mod.yml&title=%5BYour+mod+name+here%5D">
+								here</a>.
+						</p>
 					</div>
 				</div>
 
@@ -91,7 +107,7 @@ import json from '../database.json';
 		<Title title="Community" />
 
 		<div class="w-100 justify-content-center d-flex">
-			<div class="w-50">
+			<div class="w-md-50">
 				<p>Join the DREDGE community modding Discord server for mod support, or if you want to talk about playing and creating mods.</p>
 				<BrandLink class="fa-discord" name="Modding Discord" url="https://discord.gg/qFqPuTUAmD" linkClass="link-light" />
 			</div>
