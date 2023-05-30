@@ -11,3 +11,23 @@ $theme-colors: (
 );
 
 @import "node_modules/bootstrap/scss/bootstrap";
+
+.w-md-50 {
+    width: 100%;
+}
+
+@include media-breakpoint-up(md) {
+    .w-md-50 {
+        width: 50%;
+    }
+}
+
+.w-md-75 {
+    width: 100%;
+}
+
+@include media-breakpoint-up(md) {
+    .w-md-75 {
+        width: 75%;
+    }
+}
