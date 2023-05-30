@@ -47,6 +47,12 @@ mod: ${JSON.stringify(mod)}
 ---
 ${results}`
 
+        // Matches the ./ part of a local path image embed
+        let regex = /!\[.*\]\((\.\/).*\)/
+
+        let repo_root = mod.readme_raw.replace("README.md", "");
+        mod_page.replace(regex, repo_root);
+
         fs.writeFile(`${srcDir()}/pages/mods/${page_name}.md`, mod_page, 'utf8', (err : Error) => {
             if (err) {
                 throw new Error(err.message);
