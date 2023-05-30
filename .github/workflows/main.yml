@@ -1,9 +1,13 @@
-name: Fetch Database
+name: Publish Website
 
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "*.md"
+      - "LICENSE"
+      - ".gitignore"
   workflow_dispatch:
 
 permissions:
