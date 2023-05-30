@@ -17,21 +17,50 @@ import json from '../database.json';
 
 		<br/>
 
-		<Title title="Mods" />
+		<Title title="Available Mods" />
 
 		<div class="w-100 justify-content-center d-flex">
 			<div class="w-50">
 				<p>Here are some of the mods available. See the rest of them <a href="/mods/">here</a>.</p>
 				<p>
 					{json.slice().sort(() => 0.5 - Math.random()).slice(0, 3).map(x => 
-						<li><a href={"/mods/" + x.name.toLowerCase().trim().split(" ").join("_")}><b>{x.name}</b></a></li>
+						<li><a href={"/mods/" + x.name.toLowerCase().trim().split(" ").join("_")}><b>{x.name}</b></a> - {x.description}</li>
 					)}
 				</p>
 			</div>
 		</div>
 
-		<div class="w-100 justify-content-center d-flex ">
-			<a href="https://github.com/xen-42/DredgeModManager/releases" class="btn btn-info rounded ps-4 pe-4 p-2"><h2>Download the Manager Here</h2></a>
+		<br/>
+
+		<Title title="Mod Manager"/>
+
+		<div class="w-100 justify-content-center d-flex">
+			<div class="w-50">
+				<div class="d-flex align-items-center">
+					<img src="/images/mod manager.png" class="w-100 ratio ratio-1x1"></img>
+				</div>
+			</div>
+		</div>
+				
+		<br/>
+
+		<div class="justify-content-center d-flex">
+			<a href="https://github.com/xen-42/DredgeModManager/releases" class="btn btn-info rounded ps-4 pe-4 p-2"><h2>Click here to download the Mod Manager</h2></a>
+		</div>
+
+		<br/>
+
+		<div class="w-100 justify-content-center d-flex">
+			<div class="w-50">
+
+				The mod manager allows you to:
+				<ul>
+					<li>Download and install mods, including the mod loader itself</li>
+					<li>Update mods</li>
+					<li>Enable or disable mods</li>
+					<li>Launch the game directly with your enabled mods</li>
+				</ul>
+			</div>
 		</div>
 
 		<br/>
