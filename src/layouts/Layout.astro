@@ -19,7 +19,7 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Download and install mods using the DREDGE Mod Manager or learn to create your own DREDGE mods.">
+		<meta name="description" content="Download and install mods using the DREDGE Mod Manager, or learn to create your own DREDGE mods.">
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
@@ -28,9 +28,9 @@ const { title } = Astro.props;
 		<!-- Open Graph meta data -->
 		<meta property="og:url" content="https://dredgemods.com/">
 		<meta property="og:type" content="website">
-		<meta property="og:site_name" content="DREDGE Mods">
-		<meta property="og:title" content="DREDGE Mods">
-		<meta property="og:description" content="Download and install mods using the DREDGE Mod Manager or learn to create your own DREDGE mods.">
+		<meta property="og:site_name" content={title}>
+		<meta property="og:title" content={title}>
+		<meta property="og:description" content="Download and install mods using the DREDGE Mod Manager, or learn to create your own DREDGE mods.">
 		<meta property="og:image" content="https://dredgemods.com/images/opengraph.webp">
 		<meta property="og:image:width" content="1200px">
 		<meta property="og:image:height" content="600px">
@@ -39,8 +39,8 @@ const { title } = Astro.props;
 		<meta name="twitter:card" content="summary_large_image">
 		<meta property="twitter:domain" content="dredgemods.com">
 		<meta property="twitter:url" content="https://dredgemods.com/">
-		<meta property="twitter:title" content="DREDGE Mods">
-		<meta property="twitter:description" content="Download and install mods using the DREDGE Mod Manager or learn to create your own DREDGE mods.">
+		<meta property="twitter:title" content={title}>
+		<meta property="twitter:description" content="Download and install mods using the DREDGE Mod Manager, or learn to create your own DREDGE mods.">
 		<meta property="twitter:image" content="https://dredgemods.com/images/opengraph.webp">
 		<meta property="twitter:image:width" content="1200px">
 		<meta property="twitter:image:height" content="600px">
