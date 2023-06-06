@@ -14,6 +14,7 @@ const authorGithubLink = frontmatter.mod.repo.split("/")[0];
 			<div class="p-2 bg-secondary rounded w-md-75">
 				<div class="text-center">
 					<b>{frontmatter.mod.name} <i>by <a href={"https://www.github.com/" + authorGithubLink}>{frontmatter.mod.author}</a></i></b>
+					<img class="rounded-circle" style="height: 32px;" src={"https://www.github.com/" + frontmatter.mod.repo.split("/")[0] + ".png"} alt="GitHub account picture">
 				</div>
 	
 				<div class="p-2 d-flex justify-content-center">
@@ -21,17 +22,17 @@ const authorGithubLink = frontmatter.mod.repo.split("/")[0];
 				</div>
 	
 				<div class="p-2 d-flex d-flex justify-content-around flex-wrap">
-					<span>
+					<span class="ps-2 pe-2">
 						📈 {frontmatter.mod.downloads} Downloads
 					</span>
 	
-					<span>
+					<span class="ps-2 pe-2">
 						<a href={"https://www.github.com/" + frontmatter.mod.repo}>
 							<i class="fa-brands fa-github"></i> Source Code
 						</a>
 					</span>
 	
-					<span>
+					<span class="ps-2 pe-2">
 						<a href={"https://www.github.com/" + frontmatter.mod.repo + "/releases/latest/download/" + frontmatter.mod.download}>
 							<i class="fa fa-download"></i> Download zip ({frontmatter.mod.latest_version})
 						</a>
