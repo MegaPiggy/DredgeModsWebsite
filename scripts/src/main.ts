@@ -48,10 +48,11 @@ mod: ${JSON.stringify(mod)}
 ${results}`
 
         // Takes before and after ./ parts of a local path image embed as capture groups
-        let regex = /(!\[.*\]\()\.\/(.*\))/g
+        let markdownRegex = /(!\[.*\]\()\.\/(.*\))/g
+        let htmlRegex = /(\<img.+src\=\"|\<img.+src\=\')\.\/(.+?\>)/g
 
         let repo_root = mod.readme_raw.replace("README.md", "");
-        mod_page = mod_page.replace(regex, "$1" + repo_root + "$2");
+        mod_page = mod_page.replace(markdownRegex, "$1" + repo_root + "$2").replace(htmlRegex, "$1" + repo_root + "$2");
 
         fs.writeFile(`${srcDir()}/pages/mods/${page_name}.md`, mod_page, 'utf8', (err : Error) => {
             if (err) {
